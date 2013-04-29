@@ -154,7 +154,7 @@ subdir-dtc:dtc/libfdt dtc/tests
 dtc/%:
 	mkdir -p $@
 
-$(SUBDIR_RULES): libqemuutil.a libqemustub.a $(common-obj-y)
+$(SUBDIR_RULES): libqemublock.a libqemuutil.a libqemustub.a $(common-obj-y)
 
 ROMSUBDIR_RULES=$(patsubst %,romsubdir-%, $(ROMS))
 romsubdir-%:
@@ -181,6 +181,7 @@ Makefile: $(version-obj-y) $(version-lobj-y)
 
 libqemustub.a: $(stub-obj-y)
 libqemuutil.a: $(util-obj-y)
+libqemublock.a: $(block-obj-y)
 
 ######################################################################
 
